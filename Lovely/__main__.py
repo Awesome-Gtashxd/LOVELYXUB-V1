@@ -3,7 +3,7 @@ import strings
 import config
 
 from Lovely import bot, lovely
-from Lovely.helpers.help_func import get_datetime 
+from Lovely.helpers.helper_funcs import get_datetime 
 
 async def run_clients():
       await bot.start()
