@@ -1,7 +1,7 @@
 import config 
 import requests
 
-from Lovely import lovely 
+from Lovely import barath 
 from Lovely import MODULE, bot, INFO as GET_INFO
 from Lovely.helpers.help_func import spacebin
 from pyrogram import filters
