@@ -1,7 +1,7 @@
 import config 
 import requests
 
-from Lovely import barath 
+from Lovely import lovely 
 from Lovely import MODULE, bot, INFO as GET_INFO
 from Lovely.helpers.help_func import spacebin
 from pyrogram import filters
@@ -20,7 +20,7 @@ from itertools import zip_longest
 
 @bot.on_inline_query(filters.regex("help"))
 async def help_cmds(_, inline_query):
-    user_id = (await GET_INFO.barath()).id
+    user_id = (await GET_INFO.lovely()).id
     if not inline_query.from_user.id == user_id:
         return
 
@@ -61,7 +61,7 @@ async def help_cmds(_, inline_query):
 
 @bot.on_inline_query(filters.regex("test"))
 async def test(_, inline_query):
-    user_id = (await GET_INFO.barath()).id
+    user_id = (await GET_INFO.lovely()).id
     if not inline_query.from_user.id == user_id:
        return 
     string = inline_query
@@ -78,7 +78,7 @@ async def test(_, inline_query):
 
 @bot.on_inline_query(filters.regex("alive"))
 async def alive_inline(_, inline_query):
-    user_id = (await GET_INFO.barath()).id
+    user_id = (await GET_INFO.lovely()).id
     if not inline_query.from_user.id == user_id:
         return
      
