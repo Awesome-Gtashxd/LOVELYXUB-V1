@@ -5,7 +5,6 @@ from pyrogram import filters
 from pyrogram.errors import YouBlockedUser
 from pyrogram.types import *
 
-
 @Client.on_message(filters.command(["sg", "sa", "sangmata"], ".") & filters.me)
 async def sg(client: Client, message: Message):
     lol = await message.edit_text("`Processing...`")
@@ -36,4 +35,3 @@ async def sg(client: Client, message: Message):
         elif stalk:
             await message.reply(stalk.text)
             await stalk.delete()
-
