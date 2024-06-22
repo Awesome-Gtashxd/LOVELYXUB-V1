@@ -1,19 +1,19 @@
 import config 
 import requests
 
-from Lovely import lovely 
-from Lovely import MODULE, bot, INFO as GET_INFO
-from Lovely.helpers.help_func import spacebin
 from pyrogram import filters
-from Lovely.plugins.alive import alive
 from pyrogram.types import (
     InlineQueryResultArticle,
     InputTextMessageContent,
     InlineKeyboardMarkup,
     InlineKeyboardButton,
-    InlineQueryResultPhoto,  # Import InlineQueryResultPhoto
+    InlineQueryResultPhoto
 )
 
+from Lovely import lovely 
+from Lovely import MODULE, bot, INFO as GET_INFO
+from Lovely.helpers.help_func import spacebin
+from Lovely.plugins.alive import alive
  
 
 from itertools import zip_longest
@@ -56,9 +56,6 @@ async def help_cmds(_, inline_query):
         ]
     )
 
-
-
-
 @bot.on_inline_query(filters.regex("test"))
 async def test(_, inline_query):
     user_id = (await GET_INFO.lovely()).id
@@ -72,9 +69,6 @@ async def test(_, inline_query):
        InlineQueryResultArticle(
             "Here the InlineQuery Objecs",
             InputTextMessageContent(message_text=string, disable_web_page_preview=True), thumb_url="https://graph.org/file/4f71af878a085505e8faf.jpg")])
-     
-
-
 
 @bot.on_inline_query(filters.regex("alive"))
 async def alive_inline(_, inline_query):
@@ -112,6 +106,3 @@ async def alive_inline(_, inline_query):
             )
         ]
     )
-
-
- 
