@@ -1,8 +1,9 @@
-from pyrogram import Client, filters
+from pyrogram import filters
 from pyrogram.types import Message
 
+from Lovely import lovely
 
-@Client.on_message(filters.command("create", ".") & filters.me)
+@lovely.on_message(filters.command("create") & filters.me)
 async def create(client: Client, message: Message):
     if len(message.command) < 3:
         return await message.edit_text("**Type .help create if you need help**")
