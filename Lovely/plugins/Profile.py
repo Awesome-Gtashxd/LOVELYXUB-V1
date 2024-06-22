@@ -1,20 +1,18 @@
 import os
-from asyncio import sleep
-import os
 import sys
+
+from asyncio import sleep
 from re import sub
 from time import time
-
 
 from pyrogram import Client, filters, enums
 from pyrogram.types import Message
 
-from Barath.helpers.PyroHelpers import ReplyCheck
+from Lovely.helpers.PyroHelpers import ReplyCheck
 
 
 flood = {}
 profile_photo = "cache/profile.jpg"
-
 
 async def extract_userid(message, text: str):
     def is_int(text: str):
@@ -39,7 +37,6 @@ async def extract_userid(message, text: str):
     if entity.type == "text_mention":
         return entity.user.id
     return None
-
 
 async def extract_user_and_reason(message, sender_chat=False):
     args = message.text.strip().split()
@@ -75,7 +72,6 @@ async def extract_user_and_reason(message, sender_chat=False):
         return await extract_userid(message, user), reason
 
     return user, reason
-
 
 async def extract_user(message):
     return (await extract_user_and_reason(message))[0]
