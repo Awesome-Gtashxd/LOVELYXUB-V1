@@ -11,10 +11,10 @@ from yt_dlp import YoutubeDL
 from pyrogram import filters
 from pyrogram.types import *
 
-from Barath import barath, MODULE
-from config import HANDLER, OWNER_ID, BARATH
+from Lovely import lovely, MODULE
+from config import HANDLER, OWNER_ID
 
-@barath.on_message(filters.command("video",prefixes=HANDLER) & filters.me)
+@lovely.on_message(filters.command("video", prefixes=HANDLER) & filters.me)
 async def vsong(client, message):
     ydl_opts = {
         "format": "best",
