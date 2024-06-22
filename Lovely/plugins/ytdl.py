@@ -13,7 +13,7 @@ from pyrogram.types import *
 
 from Lovely import lovely, MODULE
 
-@lovely.on_message(filters.command("video", prefixes=HANDLER) & filters.me)
+@lovely.on_message(filters.command("video", prefixes=config.HANDLER) & filters.me)
 async def vsong(client, message):
     ydl_opts = {
         "format": "best",
