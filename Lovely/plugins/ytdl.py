@@ -12,7 +12,7 @@ from pyrogram import filters
 from pyrogram.types import *
 
 from Lovely import lovely, MODULE
-from config import HANDLER, OWNER_ID
+from config import HANDLER
 
 @lovely.on_message(filters.command("video", prefixes=HANDLER) & filters.me)
 async def vsong(client, message):
